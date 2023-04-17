@@ -1,0 +1,47 @@
+<%- include('./partials/head.ejs') %> 
+<body>
+    <script src="/js/insertCobroCss.js"></script>
+    <div id="contMain">
+        <div id="registroProductosBox">
+            <h3 id="tituloRegistro"><%=(typeof producto != 'undefined')?'Editar producto':'Registro de producto'%></h3>
+            <hr id="separadorRegistro">
+            <form id="registroProductos" action="<%=(typeof producto != 'undefined')?'/editProductoApply':'/nuevoProducto'%>" method="post" enctype="multipart/form-data">
+               <p class="gridColum1">Codigo: </p> <input value="<%=(typeof producto != 'undefined')?producto[0].codigo:''%>" class="gridColum2" type="text" name="codigo" placeholder="163791383618" required>
+               <p class="gridColum1">Nombre: </p> <input value="<%=(typeof producto != 'undefined')?producto[0].nombreProducto:''%>" class="gridColum2" type="text" name="nombreProducto" placeholder="Ej: Croasam Deluxe">
+               <p class="gridColum1">Precio: </p> <input value="<%=(typeof producto != 'undefined')?producto[0].precio:''%>" class="gridColum2" type="number" name="precio" placeholder="0.00">  
+               <p class="gridColum1">Descripcion: </p> <textarea class="gridColum2" name="descripcion" placeholder="Acerca del producto..."><%=(typeof producto != 'undefined')?producto[0].descripcion:''%></textarea>
+               <p class="gridColum1">Cantidad: </p> <input value="<%=(typeof producto != 'undefined')?producto[0].stock:''%>" class="gridColum2" type="number" name="stock" placeholder="0.00">  
+               <p class="gridColum1">Marca: </p> <input value="<%=(typeof producto != 'undefined')?producto[0].marca:''%>" class="gridColum2" type="text" name="marca">
+               <p class="gridColum1">Material: </p> <input value="<%=(typeof producto != 'undefined')?producto[0].material:''%>" class="gridColum2" type="text" name="material" placeholder="Ej: Oro">
+               <p class="gridColum1">Color: </p> <input value="<%=(typeof producto != 'undefined')?producto[0].color:''%>" class="gridColum2" type="text" name="color" placeholder="Ej: Blanco">    
+               <p class="gridColum1">Tamaño(mm): </p> <input value="<%=(typeof producto != 'undefined')?producto[0].tamano:''%>" class="gridColum2" type="number" name="tamano" placeholder="0.00">  
+               <p class="gridColum1">Tipo de producto: </p> 
+               <select name="tipoProducto" class="gridColum2">
+                    <option value="" selected>Elige una opción</option>
+                    <option value="1">Anillo</option>
+                    <option value="2">Aretes</option>
+                    <option value="3">Esclava</option>
+                    <option value="4">Reloj</option>
+                </select>
+                <p class="gridColum1">Imagen: </p> 
+                <%if (typeof producto != 'undefined'){%>
+                    <img src="/img/<%=producto[0].nombreImg%>" id="imgProducto" alt="No hay imagen para este producto">
+                <% } %>
+                <input class="gridColum2" type="file" name="img" value="<%=(typeof producto != 'undefined')?producto[0].nombreImg:''%>">  
+                <div id="btnBox">
+                    <button class="gridColum1" id="btnRegistroSubmit" type="submit" id="botonRegistro">
+                        <span>
+                            <img src="/img/btnRegistrar.png" class="btnIcono3">
+                        </span><br>
+                        Registrar</button>
+                    <a class="gridColum2" id="btnRegistroReset" href="/cobro" id="botonReset">
+                        <span>
+                            <img src="/img/remove.png" class="btnIcono2"><br>
+                        </span>
+                        Cancelar</a>
+                </div>
+            </form>
+        </div>
+        <script>document.querySelector('select').value="<%-(typeof producto != 'undefined')?producto[0].tipoProducto:''%>"</script>
+</body>
+<%- include('./partials/footer.ejs') %>

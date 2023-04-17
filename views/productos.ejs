@@ -1,0 +1,64 @@
+<%- include('./partials/head.ejs') %>
+<body>
+    <script src="/js/insertProductosCss.js"></script>
+    <div id="contMain">
+        <%- include('./partials/navbar.ejs') %>  
+        <!-- FILTROS -->
+        <div id="contFiltros">
+            <div id="divApplyFiltros">
+                <h2>Filtros</h2>
+            </div>
+            <div id="marca">
+                <h3>Marcas</h3>
+                <hr>
+                    <% for( let i = 0; i < marcas.length; i++ ) { %>
+                        <input type="checkbox" id="<%=marcas[i][0]%>"><label for="<%=marcas[i][0]%>"> <%=marcas[i][0]%> (<%=marcas[i][1]%>)</label><br>
+                    <% } %>
+            </div>
+            <div id="color">
+                <h3>Colores</h3>
+                <hr>
+                    <% for( let i = 0; i < colores.length; i++ ) { %>
+                        <input type="checkbox" id="<%=colores[i][0]%>"> <label for="<%=colores[i][0]%>"><%=colores[i][0]%> (<%=colores[i][1]%>)</label></input><br>
+                    <% } %>
+            </div>
+            <div id="material">
+                <h3>Materiales</h3>
+                <hr>
+                    <% for( let i = 0; i < materiales.length; i++ ) { %>
+                        <input type="checkbox" id="<%=materiales[i][0]%>"> <label for="<%=materiales[i][0]%>"><%=materiales[i][0]%> (<%=materiales[i][1]%>)</label></input><br>
+                    <% } %>
+            </div>
+            <div id="tamano">
+                <h3>Tamaños</h3>
+                <hr>
+                    <% for( let i = 0; i < tamanos.length; i++ ) { %>
+                        <input type="checkbox" id="<%=tamanos[i][0]%>"> <label for="<%=tamanos[i][0]%>"><%=tamanos[i][0]%> (<%=tamanos[i][1]%>)</label></input><br>
+                    <% } %>
+            </div>
+        </div>
+                <!-- TARJETAS -->
+            <div class="rowCardBox">
+            <% for( let i = 0; i < productos.length; i++ ) { %>
+                <div class="cardBox" color="<%=productos[i].color%>" tamano="<%=productos[i].tamano%>" marca="<%=productos[i].marca%>" material="<%=productos[i].material%>" >
+                    <div class="imageBox">
+                        <% if (productos[i].nombreImg != null) { %>
+                            <img class="imgProducto" src="/img/<%=productos[i].nombreImg%>" alt="Producto en venta">
+                        <% } else {%>
+                            <img class="imgProducto" src="/img/Muestra.jpg" alt="Producto en venta">
+                        <% } %>
+                    </div>
+                    <div class="cardBodyBox">
+                        <h3 class="titleProducto"><%= productos[i].nombreProducto %></h3>
+                        <p class="priceProducto">$ <%= productos[i].precio %></p>
+                    </div>
+                    <div class="btnBox">
+                        <a class="linkCompra" href="/viewProducto/<%=productos[i].idProducto%>">Ver opciones</a>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+    <script src="/js/filter.js"></script>
+</body>
+<%- include('./partials/footer.ejs') %>

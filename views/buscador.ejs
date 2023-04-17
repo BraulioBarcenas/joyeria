@@ -1,0 +1,101 @@
+<%- include('./partials/head.ejs') %> 
+<body>
+    <script src="/js/insertCobroCss.js"></script>
+    <div id="contMain">
+        <div id="crudBuscador">
+            <div id="boxBuscador">
+                <h3 id="tituloBuscador">Buscador de productos</h3>
+                <form id="formBuscador">
+                    <p class="txtCodigo">Nombre: </p>
+                    <input type="text" placeholder="Inserte nombre" class="inputBuscador" id="searchNombre">
+                    <p class="txtCodigo">Tipo: </p>
+                    <select type="text" placeholder="Inserte nombre" class="inputBuscador" id="searchTipo">
+                        <option value="" selected>Elige una opción</option>
+                        <option value="1">Anillo</option>
+                        <option value="2">Aretes</option>
+                        <option value="3">Esclava</option>
+                        <option value="4">Reloj</option>>
+                    </select>
+                    <p class="txtCodigo">Marca: </p>
+                    <input type="text" placeholder="Marca" id="searchMarca" class="inputBuscador">
+                    <p class="txtCodigo">Codigo: </p>
+                    <input type="text" placeholder="10123823023811" id="searchCodigo" class="inputBuscador">
+                    <button type="button" id="btnBuscar">Buscar</button>
+                </form>
+            </div>
+            <div id="crud1">
+                    <table id="tablaBuscador">
+                        <tbody>
+                            <tr>
+                                <th colspan="11" id="tituloTablaCrudBuscador">Productos</th>
+                            </tr>
+                            <tr>
+                                <th id="tableTh1">Código#</th>
+                                <th id="tableTh2">Nombre</th>
+                                <th id="tableTh3">Precio</th>
+                                <th id="tableTh4">Stock</th>
+                                <th id="tableTh5">Tipo</th>
+                                <th id="tableTh6">Descripción</th>
+                                <th id="tableTh7">Marca</th>
+                                <th id="tableTh8">Material</th>
+                                <th id="tableTh9">Tamaño</th>
+                                <th id="tableTh9">Tamaño</th>
+                                <th colspan="2">Acciones</th>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        const deleteProducto = async (element) => {
+            confirm('¿Desea eliminar el producto de la base de datos?');
+            const trProducto = element.parentElement.parentElement;
+            const codigoProducto = trProducto.querySelector('td').innerText;
+            const res = await $.post('/deleteProducto',{codigo: codigoProducto});
+            if (res == 'OK') {
+                trProducto.parentElement.removeChild(trProducto);
+            } else {
+                alert('Ocurrió un error al eliminar el producto');
+            }
+        }
+
+        document.querySelector('#btnBuscar').addEventListener('click', async (e) => {
+            const nombre = e.target.form.querySelector('#searchNombre').value;
+            const tipo = e.target.form.querySelector('#searchTipo').value;
+            const marca = e.target.form.querySelector('#searchMarca').value;
+            const codigo = e.target.form.querySelector('#searchCodigo').value;
+            let productos = await $.post('/searchProducto', {like:true,codigo: codigo,
+                                                            nombreProducto:nombre,
+                                                            marca: marca,
+                                                            tipoProducto: tipo,
+                                                            });
+            if (productos !='Fallido') {
+                const tbodyTabla = document.querySelector('#tablaBuscador').querySelector('tbody');
+                let searched = tbodyTabla.querySelectorAll('.searched');
+                for (const search of searched) {
+                    tbodyTabla.removeChild(search);
+                }
+                for (const producto of productos) {
+                    const tr = document.createElement('tr');
+                    tr.style.textAlign = 'center';
+                    tr.style.borderBottom= '1px black solid'
+                    tr.className='searched';
+                    tr.innerHTML = `<td style="border: 1px solid black">${producto.codigo}</td>
+                                    <td style="border: 1px solid black">${producto.nombreProducto}</td>
+                                    <td style="border: 1px solid black">${producto.precio}</td>
+                                    <td style="border: 1px solid black">${producto.stock}</td>
+                                    <td style="border: 1px solid black">${producto.tipoProducto}</td>
+                                    <td style="border: 1px solid black">${producto.descripcion}</td>
+                                    <td style="border: 1px solid black">${producto.marca}</td>
+                                    <td style="border: 1px solid black">${producto.material}</td>
+                                    <td style="border: 1px solid black">${producto.tamano}</td>
+                                    <td style="border: 1px solid black"><form action='/editProducto' method='post'><input style='display:none' name='codigo' value='${producto.codigo}'></input><button style='cursor: pointer; padding:1%; width: 100%; border: none;'>Editar </button></form></td>
+                                    <td style="border: 1px solid black"><button style='padding:1%; width: 100%; border: none; cursor: pointer;' onclick='deleteProducto(this)'>Eliminar</button></td>`
+                    tbodyTabla.appendChild(tr);
+                }
+            }
+        })
+    </script>
+</body>
+<%- include('./partials/footer.ejs') %>

@@ -1,0 +1,8 @@
+#errorTitle, #errorSubtitle, #errorLogo{
+    grid-column: 1/9;
+    margin: auto;
+}
+
+#errorTitle{
+    margin-top: 15%;
+}

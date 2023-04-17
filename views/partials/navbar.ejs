@@ -1,0 +1,31 @@
+<div id="navbar">
+    <img src="/img/logo.png" alt="" id="logoNavBar" onclick="location.replace('/')" style="cursor: pointer;">
+    <div id="navOptsDiv">
+        <a class="navOpt" href="/productos/anillos">Anillos</a>
+        <a class="navOpt" href="/productos/aretes">Aretes</a>
+        <a class="navOpt" href="/productos/esclavas">Esclavas</a>
+        <a class="navOpt" href="/productos/relojes">Relojes</a>
+    </div>
+    <div id="navLoginDiv">
+        <a class="navOpt" id="carrito" href="#">
+            <img src="/img/cart.png" alt="Carrito">
+            <span id="carritoCount"></span>
+        </a>
+        <a class="navOpt" id="registro" href="#">Registro</a>
+        <a class="navOpt" id="login" href="#">Login</a>
+    </div>
+    <script>
+        const countCarrito = document.querySelector('#carritoCount');
+        const updateCarritoCount = () => {
+            let carrito = JSON.parse(sessionStorage.getItem('carrito'));
+            countCarrito.innerText = carrito.length;
+        }
+        window.addEventListener('load',(e) => {
+            try {
+                updateCarritoCount();
+            } catch (error) {
+                
+            }
+        })
+    </script>
+</div>

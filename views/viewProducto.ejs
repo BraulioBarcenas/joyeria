@@ -1,0 +1,73 @@
+<%- include('./partials/head.ejs') %>
+<body>
+    <script src="/js/insertViewProductoCss.js"></script>
+    <%- include('./partials/navbar.ejs') %>
+    <div class="flex-box">
+        <div class="left">
+            <div class="big-img">
+                <% if (producto[0].nombreImg != null) { %>
+                    <img style="height: 250px; width: 290px;" src="/img/<%=producto[0].nombreImg%>">
+                    <% } else {%>
+                    <img style="height: 250px; width: 290px;" src="/img/Muestra.jpg">
+                <% } %>
+            </div>
+        </div>
+
+        <div class="right">
+            
+            <div class="name"><%=producto[0].nombreProducto%></div>
+
+            <div class="star">
+                <hr class="division-estrella">
+                <br>
+                <p>Disponibles: <span style="color: rgb(230, 60, 60);"><%=producto[0].stock%></span></p>
+            </div>  
+
+            <div class="precio">$<%=producto[0].precio%></div>
+            <div class="medidas">
+                <p>Tamaño: </p>
+                <div class="pmedidas"><%=producto[0].tamano%> mm</div>
+            </div>
+            <div class="cantidad">
+                <p>Cantidad: </p>
+                <input type="number" id="cantidad" min="1" max="<%=producto[0].stock%>" value="1">
+            </div>
+            <div class="btn-box">
+                <button class="carrito-btn" onclick="addCarrito()">Agregar al carrito</button>
+                <button class="comprar-btn">Compra ahora</button>
+            </div>
+        </div>
+
+        <div class="descripcion">
+            <h3>Descripción</h3>
+            <p style="font-size: 14px;"><%=producto[0].descripcion%></p>
+        </div>
+    </div>
+
+    <script>
+        const addCarrito = () => {
+            try {
+                const id = (_.last(location.pathname.split('/')))*1;
+                const cantidad = (document.querySelector('#cantidad').value)*1;
+    
+                if (typeof sessionStorage.carrito == 'undefined') {
+                    sessionStorage.setItem('carrito',JSON.stringify([{id: id, cantidad: cantidad}]));
+                }else{
+                    let carrito = JSON.parse(sessionStorage.getItem('carrito'));
+                    carrito.push({id: id, cantidad: cantidad})
+                    sessionStorage.removeItem('carrito');
+                    sessionStorage.setItem('carrito',JSON.stringify(carrito));                
+                }
+                
+                updateCarritoCount();
+                alert('Producto agregado al carrito');
+            } catch (error) {
+                alert('Ocurrio un error al agregar producto al carrito');
+            }
+            
+
+            
+        }
+    </script>
+</body>
+<%- include('./partials/footer.ejs') %>

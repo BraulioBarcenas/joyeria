@@ -1,0 +1,106 @@
+*{margin: 0px; padding: 0px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;} a{text-decoration: none;}
+body{
+    background-color: #f8f7f4;
+}
+#contMain{
+    display: grid;
+    grid-template-columns: calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8);
+
+}
+
+#carrusel{
+    grid-column: 1/9;
+    background-color: black;
+    color: wheat;
+}
+
+#navbar{
+    grid-column: 1/9;
+    display: grid;
+    background-color: #fdfbfb;
+    font-size: 18px;
+    margin-bottom: 1%;
+    grid-template-columns: calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8);
+    -webkit-box-shadow: 2.5px -0.5px 10.5px -3px #dddddd;
+    -moz-box-shadow: 2.5px -0.5px 10.5px -3px #dddddd;
+    box-shadow: 2.5px -0.5px 10.5px -3px #dddddd;
+}
+
+#navbar #logoNavBar{
+    grid-column: 1;
+    height: 72px;
+    width: 72px;
+    /* border: 1px solid black; */
+    margin: auto;
+}
+
+
+#navOptsDiv{
+    grid-column: 2/6;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.navOpt{
+    margin-left: 2%;
+    margin-right: 2%;
+    border-radius: 5px;
+    color: rgb(74, 74, 74);
+    padding: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.navOpt:hover{
+    background-color: #f5f5f5;
+    color: #3a3a3a;
+    transition: 320ms;
+    -webkit-box-shadow: 3px 1.5px 10.5px -3px #dddddd;
+    -moz-box-shadow: 3px 1.5px 10.5px -3px #dddddd;
+    box-shadow: 3px 1.5px 10.5px -3px #dddddd;
+}
+
+#carritoCount{
+    background: red;
+    color: white;
+    border-radius: 10px;
+    padding: 0px 4px 0px 4px;
+    font-size: 12px;
+    width: fit-content;
+    float: right;
+}
+
+#navLoginDiv{
+    grid-column: 6/9;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 10%;
+}
+
+#navLoginDiv a img{
+    max-width: 32px;
+    max-height: 32px;
+}
+
+#contAbout{
+    grid-column: 1/9;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #3a3a3a;
+    margin: auto;
+    color: #dddddd;
+    padding: 1.5%;
+}
+
+#txtAbout h2, #txtAbout a{
+    display: block;
+    text-align: center;
+}

@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+
+body{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: 100px, auto;
+    background-color: #f8f7f4;
+}
+
+.flex-box{
+    grid-column: 1/9;
+    display: grid;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: 100px, auto;
+    background-color: #fdfbfb;
+    padding: 5%;
+    box-shadow: 2.5px -0.5px 10.5px -3px #dddddd
+}
+
+.right{
+    grid-column: 2/4;
+    margin-left: 5%;
+}
+
+.left{
+    grid-column: 1/2;
+    width: 100%;
+    height: fit-content;
+    margin-top: 10%;
+}
+
+.big-img img{
+    width: inherit;
+}
+
+.name{
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.division-estrella{
+    margin-top: 2%;
+}
+
+.precio{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.medidas p{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+.medidas{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.pmedidas{
+    width: 70px;
+    height: 30px;
+    border: 1px solid #333333;
+    color: #000;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.cantidad{
+    display: flex;
+}
+
+.cantidad p{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+.cantidad input{
+    width: 40px;
+    font-size: 17px;
+    font-weight: 500;
+    text-align: center;
+    margin-left: 15px;
+}
+
+.btn-box{
+    display: flex;
+    margin-top: 40px;
+    /* width: 60%; */
+    /* border: 1px solid black; */
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.btn-box button{
+    font-size: 18px;
+    padding: 8px 25px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 3%;
+    color: white;
+}
+
+.carrito-btn{
+    background-color: rgb(46, 46, 46);
+    color: white;
+    border: black solid 1px;
+    margin-right: 5%;
+}
+
+.comprar-btn{
+    background-color: #f5c85d;
+    color: white;
+    border: black solid 1px;
+}
+
+.carrito-btn:hover{
+    transition: all 0.5s;
+    background-color: #f0ffff;
+    color: black;
+    box-shadow: 3px -2px 9px 1.5px #dddddd;
+    
+}
+
+.comprar-btn:hover{
+    transition: all 0.5s;
+    background-color: #ffc43b;
+    color: black; 
+    box-shadow: 3px -2px 9px 1.5px #dddddd;
+}
+
+.descripcion{
+    width: 100%;
+    display: grid;
+    grid-column: 1/4;
+    text-align: justify;
+}

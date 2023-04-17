@@ -1,0 +1,68 @@
+.rowCardBox{
+    min-height: 270px;
+    grid-column: 4/8;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1%;
+}
+
+.cardBox{
+    width: 30%;
+    /* border: 1px solid gray; */
+    border-radius: 2%;
+    margin-bottom: 3%;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    height: max-content;
+    box-shadow: 0.5px 3px 10px 1.5px #dddddd;
+}
+
+.imageBox{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.imgProducto{
+    width: 100%;
+    height: auto;
+}
+
+.cardBodyBox{
+    margin-top: 5%;
+    margin-bottom: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.titleProducto{
+    margin-bottom: 4%;
+}
+
+.priceProducto{
+    font-size: 16px;
+}
+
+.btnBox{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2%;
+    margin: 5%;
+}
+
+.linkCompra{
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5%;
+    padding: 3%;
+}
+
+.linkCompra:hover{
+    background-color: #212529;
+    color: white;
+    cursor: pointer;
+    transition: 350ms;
+    box-shadow: 2px 2px 1px 0.5px #3f3f3f;    
+}

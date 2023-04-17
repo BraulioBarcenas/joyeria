@@ -1,0 +1,89 @@
+/* body{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+} */
+button {
+	padding: 0.1em 0.25em;
+	
+	width: 13.2em;
+	height: 4.2em;
+	background-color: #212121;
+	border: 0.08em solid #fff;
+	border-radius: 0.3em;
+	font-size: 12px;
+	display: grid;
+	margin: auto;
+	cursor: pointer;
+  }
+  
+button span {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	bottom: 0.4em;
+	width: 8.25em;
+	height: 2.5em;
+	background-color: #212121;
+	border-radius: 0.2em;
+	font-size: 1.5em;
+	color: #fff;
+	border: 0.08em solid #fff;
+	box-shadow: 0 0.4em 0.1em 0.019em #fff;
+	
+}
+  
+button span:hover {
+	transition: all 0.5s;
+	transform: translate(0, 0.4em);
+	box-shadow: 0 0 0 0 #fff;
+}
+  
+button span:not(hover) {
+	transition: all 1s;
+}
+  
+
+.slider {
+	width: 50%;
+	margin: auto;
+	overflow: hidden;
+    float: left;
+}
+
+.slider ul {
+	display: flex;
+	padding: 1%;
+	width: 400%;
+	animation: cambio 20s infinite alternate linear;
+}
+
+.slider li {
+	width: 100%;
+	list-style: none;
+	padding-right: 10%;
+}
+
+.slider p {
+	width: 100%;
+	justify-content: center;
+    align-items: center;
+    text-align: center;
+	padding-top: 3%;
+	padding-bottom: 6%;
+}
+
+@keyframes cambio {
+	0% {margin-left: 0;}
+	20% {margin-left: 0;}
+	
+	25% {margin-left: -100%;}
+	45% {margin-left: -100%;}
+	
+	50% {margin-left: -200%;}
+	70% {margin-left: -200%;}
+	
+	75% {margin-left: -300%;}
+	100% {margin-left: -300%;}
+}

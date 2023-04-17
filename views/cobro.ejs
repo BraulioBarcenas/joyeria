@@ -1,0 +1,46 @@
+<%- include('./partials/head.ejs') %> 
+<body style="overflow-y: hidden;">
+    <script src="/js/insertCobroCss.js"></script>
+    <div id="contMain">
+        <div id="contCajaCobro">
+            <div id="crud">
+                    <table id="tabla">
+                        <tbody>
+                            <tr class="tableTr">
+                                <th colspan="5" id="tituloTablaCrud">CRUD Cobro</th>
+                            </tr>
+                            <tr class="tableTr">
+                                <th class="tableTh">Código#</th>
+                                <th class="tableTh">Artículo</th>
+                                <th class="tableTh">Precio</th>
+                                <th class="tableTh">Total</th>
+                                <th class="tableTh">Eliminar</th>
+                            </tr>
+                        </tbody>
+                    </table>
+        </div>
+
+        <div id="opcionesExtras">
+            <button type="button" class="botonPrimario" id="botonPrimario1"><p><img src="/img/btnRegistrar.png" class="btnIcono1"></p>Registrar producto</button>
+            <button type="button" class="botonPrimario" id="botonPrimario2"><p><img src="/img/btnBuscar.png" class="btnIcono1"></p>Búscar producto</button>
+            <div id="codigo">
+                    <p><input type="text" id="codigoInput" placeholder="Código" autofocus></p><br>
+                    <p><input type="text" id="pagoInput" placeholder="Pago"></p>
+            </div>
+        </div>
+
+        <div id="totalPago">
+            <div>
+                <h4 class="pagoTxt" id="pago">Pagó con: </h4>
+                <h4 class="pagoTxt" id="cambio">Cambio: </h4>
+            </div>
+            <h4 id="totaltxt">Total: </h4>
+            <div id="botonBox">
+                <button type="button" id="botonPrimario3" onclick="comprar(carrito)"><p><img src="/img/btnPagar.png" class="btnIcono2"></p>Realizar pago</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/js/cobro.js"></script>
+</body>
+<%- include('./partials/footer.ejs') %>
