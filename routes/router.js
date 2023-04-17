@@ -14,6 +14,7 @@ const upload = multer({storage: storage});
 
 
 router.get('/',controller.main);
+router.get('/productos',controller.goToProductos);
 router.get('/productos/:tipo',controller.renderProductos);
 router.get('/error',controller.error);
 router.get('/cobro',controller.cobro);

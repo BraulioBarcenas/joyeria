@@ -41,3 +41,9 @@
     box-shadow: 3px 1.5px 10.5px -3px #dddddd
 }
 
+
+@media (max-width: 700.98px){
+    #contFiltros{
+        grid-column: 1/9;
+    }
+}

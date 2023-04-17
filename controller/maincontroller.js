@@ -8,6 +8,10 @@ controller.main = (req,res) => {
     res.render('index');
 }
 
+controller.goToProductos = (req,res) => {
+    res.redirect('/productos/anillos');
+}
+
 controller.renderProductos = (req,res) => {
     const determinarTipo = (string) => {
         switch (string) {
