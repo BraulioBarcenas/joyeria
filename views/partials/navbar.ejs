@@ -11,8 +11,12 @@
             <img src="/img/cart.png" alt="Carrito">
             <span id="carritoCount"></span>
         </a>
-        <a class="navOpt" id="registro" href="#">Registro</a>
-        <a class="navOpt" id="login" href="#">Login</a>
+        <% if (logged == true) { %>
+            <a href="/logout" class="navOpt">Cerrar Sesión</a>
+        <% } else {%>
+            <a class="navOpt" id="registro" href="/login">Registro</a>
+            <a class="navOpt" id="login" href="/login/register">Login</a>
+        <% } %>
     </div>
     <script>
         const countCarrito = document.querySelector('#carritoCount');

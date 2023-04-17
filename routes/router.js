@@ -17,16 +17,18 @@ router.get('/',controller.main);
 router.get('/productos',controller.goToProductos);
 router.get('/productos/:tipo',controller.renderProductos);
 router.get('/error',controller.error);
-router.get('/cobro',controller.cobro);
-router.get('/registro',controller.registro);
-router.post('/nuevoProducto',upload.single('img'),controller.nuevoProducto,controller.correcto);
-router.get('/buscador',controller.buscador);
 router.get('/viewProducto/:id',controller.viewProducto);
-router.post('/searchProducto',controller.searchProducto);
 router.post('/buy',controller.comprar);
-router.post('/deleteProducto',controller.deleteProducto);
-router.post('/editProducto',controller.editProducto);
-router.post('/editProductoApply',upload.single('img'),controller.editProductoApply);
+
+// Exclusivas de empleados
+router.get('/cobro',controller.isEmpleado,controller.cobro);
+router.get('/registro',controller.isEmpleado,controller.registro);
+router.get('/buscador',controller.isEmpleado,controller.buscador);
+router.post('/nuevoProducto',controller.isEmpleado,upload.single('img'),controller.nuevoProducto,controller.correcto);
+router.post('/searchProducto',controller.isEmpleado,controller.searchProducto);
+router.post('/deleteProducto',controller.isEmpleado,controller.deleteProducto);
+router.post('/editProducto',controller.isEmpleado,controller.editProducto);
+router.post('/editProductoApply',controller.isEmpleado,upload.single('img'),controller.editProductoApply);
 
 const sesiones = require('../controller/sesiones.js')
 

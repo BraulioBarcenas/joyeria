@@ -5,7 +5,15 @@ const fs = require('fs')
 const controller = {};
 
 controller.main = (req,res) => {
-    res.render('index');
+    if (req.session.loggedin == true) {
+        res.render('index',{
+            logged: true
+        });
+    }else{
+        res.render('index',{
+            logged: false
+        });
+    }
 }
 
 controller.goToProductos = (req,res) => {
@@ -38,13 +46,25 @@ controller.renderProductos = (req,res) => {
             const colores = _.pairs(_.countBy(result,'color')); // Tiene objeto con la marca como key y el numero de veces
             const materiales = _.pairs(_.countBy(result,'material')); // Tiene objeto con la marca como key y el numero de veces
             const tamanos = _.pairs(_.countBy(result,'tamano')); // Tiene objeto con la marca como key y el numero de veces
-            res.render('productos',{
-                productos: result,
-                marcas: marcas,
-                colores: colores,
-                materiales: materiales,
-                tamanos: tamanos
-            });
+            if (req.session.loggedin == true) {
+                res.render('productos',{
+                    productos: result,
+                    marcas: marcas,
+                    colores: colores,
+                    materiales: materiales,
+                    tamanos: tamanos,
+                    logged: true
+                });
+            }else{
+                res.render('productos',{
+                    productos: result,
+                    marcas: marcas,
+                    colores: colores,
+                    materiales: materiales,
+                    tamanos: tamanos,
+                    logged: false
+                });
+            }  
         })
     })   
 }
@@ -53,14 +73,17 @@ controller.error = (req, res) => {
     res.render('error');
 }
 
+controller.isEmpleado = (req,res,next) => {
+    if (req.session.empleado == true) {
+        return next();
+    }else{
+        res.redirect('/');
+    }
+    
+}
 
 controller.cobro = (req,res) => {
-    if (req.session.loggedin == true) {
-        res.redirect('/login');
-    }else{
-        // res.render('registroProducto');
-        res.render('cobro');
-    }
+    res.render('cobro');
 }
 
 controller.registro = (req,res) => {
@@ -125,9 +148,17 @@ controller.viewProducto = (req, res) => {
     const id = req.params.id;
     req.getConnection((err,conn) => {
         conn.query("SELECT * FROM productos WHERE idProducto=?",[id], (err, result) => {
-            res.render('viewProducto',{
-                producto: result
-            });
+            if (req.session.loggedin == true) {
+                res.render('viewProducto',{
+                    producto: result,
+                    logged: true
+                });
+            }else{
+                res.render('viewProducto',{
+                    producto: result,
+                    logged: false
+                });
+            }
         })
     })
 }

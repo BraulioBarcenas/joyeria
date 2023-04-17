@@ -45,10 +45,20 @@ controller.auth = (req,res) => {
                                 console.log('La contraseña es incorrecta');
                                 res.render('errorPass');
                             }else{
-                                console.log('BIENVENIDO');
-                                req.session.loggedin = true;
-                                req.session.name = element.name;
-                                res.redirect('/');
+                                console.log(element);
+                                if (element.Rol == "1") {
+                                    console.log('BIENVENIDO');
+                                    req.session.loggedin = true;
+                                    req.session.name = element.name;
+                                    res.redirect('/');
+                                }
+                                if (element.Rol == "2") {
+                                    console.log('BIENVENIDO EMPLEADO');
+                                    req.session.loggedin = true;
+                                    req.session.empleado = true;
+                                    req.session.name = element.name;
+                                    res.redirect('/cobro');                                    
+                                }
                             }
                         })
                 });
