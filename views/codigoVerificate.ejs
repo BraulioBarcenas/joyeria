@@ -1,0 +1,30 @@
+<%- include('./partials/head.ejs') %> 
+<body>
+    <div id="contMain">
+        <div id="boxOlvidar">
+            <h1 id="tituloOlvidar">Introduce el código que hemos enviado a tu email</h1>
+            <img src="/img/gmail.png" id="imgOlvidarPass">
+            <form action="/verificate" method="post" id="formOlvidar">
+                <input type="text" placeholder="Introduce el código de verificación" name="codigoVerificate" id="inputOlvidar" required maxlength="6">
+                <button type="submit" id="botonOlvidar">Siguiente</button>
+            </form>
+            <!-- <a href="#" id="reenviarCodigo">Reenviar codigo</a> -->
+            <form action="/reenviarCodigo" method="post">
+                <button type="submit" id="botonReenviar">Reenviar codigo</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        // $('#botonOlvidar').click(function(e){
+        //     $('#botonOlvidar').prop('disabled', true);
+        //     $('#botonReenviar').prop('disabled', true);
+        //     setTimeout(function() {
+        //         $('#mybutton').prop('disabled', false);
+        //         $('#botonReenviar').prop('disabled', false);
+        //     }, 2000);
+        // });
+
+    </script>
+
+</body>
+<%- include('./partials/footer.ejs') %>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeria</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <script src="/js/login.js"></script>
+</head>
+<body>
+    
+    <h2>Acceso a clientes</h2>
+    
+    <div id="space">
+        <!-- TUTILO -->
+        <div class="title">
+            <h3>Ingresa tu correo y contraseña</h3>
+        </div>
+        <!-- LEYENDA -->
+        <div class="leyenda">
+            <p>Si ya estás registrado, ingresa tu correo y contraseña</p>
+        </div>
+        <!-- FORMULARIO DE LOGIN -->
+        <form action="" method="post" id="form">
+            <!-- CORREO -->
+            <label for="">Email</label>
+            <div class="email">
+                <input id="email" name="email" type="email" form="form" required autofocus>
+            </div>
+            <!-- CONTRASEÑA -->
+            <label for="">Contraseña</label>
+            <div class="pass">
+                <input id="pass" name="password" type="password" form="form" required>
+            </div>
+        </form>
+        <!-- LEYENDA PUNTO DE VENTA -->
+        <div class="ventaLeyenda">
+            <label for="">¿Eres un punto de venta?</label>
+            <!-- <input type="checkbox"> -->
+        </div>
+        <!-- LEYENDA INPUT -->
+        <div class="ventaInput">
+            <input type="checkbox" id="check" onchange="mostrar()">
+        </div>
+
+        <form action="" id="token" style="display: none;">
+            <input id="tokenLabel" type="text" placeholder="Ingresa el token punto de venta"><br>
+            <input id="tokenInput" type="submit">
+        </form>
+        
+
+        <!-- CONTRASEÑA OLVIDADA -->
+        <div id="olvidar" class="forgottenPass">
+            <a href="/opcionesRecPass">¿Olvidaste tu contraseña?</a>
+        </div>
+        <!-- BOTÓN DE LOGIN -->
+        <div id="login" form="form" class="login">
+            <!-- <a form="form">Ingresar</a> -->
+            <button class="login" form="form" type="submit">Ingresar</button>
+        </div>
+        <!-- TITULO 2 -->
+        <div class="title2">
+            <h3>Regístrate</h3>
+        </div>
+        <!-- LEYENDA 2 -->
+        <div class="leyenda2">
+            <p>Si deseas hacer pedidos es necesario tener una cuenta, dar click en el botón para registrarte.</p>
+        </div>
+        <!-- REGISTRATE -->
+        <div class="registrarse">
+            <a href="/login/register">Crear una cuenta</a>
+        </div>
+        <!-- Linea del medio -->
+        <div class="linea"></div>
+        
+    </div>
+</body>
+</html>

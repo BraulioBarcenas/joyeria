@@ -1,0 +1,192 @@
+*{
+    background-color: #f8f7f4;
+}
+
+h2{
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: hsla(0, 0%, 0%, 0.200) solid 1px;
+    padding-bottom: 2%;
+}
+
+
+#space{
+    display: grid;
+    grid-template-columns: calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8);
+}
+
+.linea{
+    display: grid;
+    grid-column: 4/5;
+    grid-row: 2/5;
+    border-right: hsla(0, 0%, 0%, 0.200) solid 1px;
+}
+
+.title{
+    display: grid;
+    grid-column: 2/4;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: hsla(0, 0%, 0%, 0.200) solid 1px;
+}
+
+.leyenda{
+    display: grid;
+    grid-column: 2/4;
+}
+
+form{
+    display: grid;
+    grid-column: 2/4;
+}
+
+form .email{
+    margin-bottom: 6%;
+}
+
+form .pass{
+    margin-bottom: 6%;
+}
+
+input{
+    height: 130%;
+    width: 90%;
+    border: black solid 1px;
+}
+
+label{
+    margin-bottom: 2.5%;
+}
+
+.forgottenPass{
+    display: grid;
+    grid-column: 2/3;
+    margin-top: 5%;
+    margin-bottom: 5%
+}
+
+.forgottenPass a{
+    text-decoration: none;
+    padding: 3%;
+    text-align: center;
+    border: black solid 1px;
+    color: black;
+    background-color: rgb(46, 46, 46);
+    color: white;
+}
+
+.forgottenPass a:hover{
+    transition: all 0.5s;
+    background-color: azure;
+    color: black;
+}
+
+/* .login{
+    display: grid;
+    grid-column: 3/4;
+    margin-top: 5%;
+    margin-bottom: 5%
+} */
+
+.login button{
+    text-decoration: none;
+    padding: 3%;
+    text-align: center;
+    border: black solid 1px;
+    color: black;
+    margin-left: 8%;
+    margin-right: 10%;
+    background-color: rgb(46, 46, 46);
+    color: white;
+    margin-top: 5%;
+    height: 60%;
+    width: 90%;
+}
+
+.login button:hover{
+    background-color:azure;
+    color: rgb(0, 0, 0);
+    transition: all 0.5s;
+}
+
+.title2{
+    display: grid;
+    grid-column: 6/8;
+    grid-row: 1/2;
+    text-align: center;
+    border-bottom: hsla(0, 0%, 0%, 0.200) solid 1px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.leyenda2{
+    display: grid;
+    grid-column: 6/8;
+    grid-row: 2/3;
+}
+
+.registrarse{
+    display: grid;
+    grid-column: 6/7;
+    grid-row: 3/4;
+    margin-bottom: 50%;
+    padding: 5%;
+    text-align: center;
+}
+
+.registrarse a{
+    padding-top: 2%;
+    text-decoration: none;
+    border: black solid 1px;
+    background-color: rgb(46, 46, 46);
+    color: white;
+}
+
+.registrarse a:hover{
+    background-color:azure;
+    color: rgb(0, 0, 0);
+    transition: all 0.5s;
+}
+
+.ventaLeyenda{
+    display: grid;
+    grid-column: 2/3;
+    margin-top: 3%;
+    font-size: large;
+}
+
+.ventaInput{
+    display: grid;
+    grid-column: 3/4;
+    margin-bottom: 5%;
+    padding-right: 80%;
+}
+
+#token{
+    display: grid;
+    grid-template-rows: 60% 60%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    /* display: none; */
+}
+
+#token #tokenLabel{
+    display: grid;
+    grid-row: 1/2;
+    height: 70%;
+    margin-bottom: 1%;
+}
+
+#token #tokenInput{
+    display: grid;
+    grid-row: 2/3;
+    height: 70%;
+    width: 92%;
+    border: black solid 1px;
+    background-color: rgb(46, 46, 46);
+    color: white;
+}
+
+#token #tokenInput:hover{
+    background-color:azure;
+    color: rgb(0, 0, 0);
+    transition: all 0.5s;
+}

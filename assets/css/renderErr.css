@@ -1,0 +1,150 @@
+#boxOlvidarErr{
+    grid-column: 3/7;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    margin-top: 10%;
+    border: 1px solid gray;
+    border-radius: 1%;
+    background-color: #f8f7f4;
+    -webkit-box-shadow: 9px 9px 16px 3px #ded9d9;
+    -moz-box-shadow: 9px 9px 16px 3px #ded9d9;
+    box-shadow: 9px 9px 16px 3px #ded9d9;
+}
+
+#tituloOlvidarErr{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 25px;
+}
+
+#imgOlvidarPassErr{
+    width: 20%;
+    margin: auto;
+}
+
+#formOlvidarErr{
+    margin-top: 2%;
+    display: grid;
+}
+
+#inputOlvidarErr{
+    padding: 1%;
+    grid-row: 1;
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 2%;
+}
+
+#botonOlvidarErr{
+    grid-row: 3;
+    background-color: transparent;
+    border-radius: 2%;
+    border: 1px solid #b2b8ad;
+    display: inline-block;
+    cursor: pointer;
+    color: black;
+    text-decoration:none;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 3%;
+    padding: 1%;
+}
+
+#errBox{
+    grid-row: 2;
+    width: auto;
+    color: #691911;
+    background-color: #f4d6d2;
+    border-color: #f0c5c1;
+    margin-bottom: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#boxQuestionErr{
+    grid-row: 4;
+    width: auto;
+    color: #691911;
+    background-color: #f4d6d2;
+    border-color: #f0c5c1;
+    margin-bottom: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+
+#botonOlvidarErr:hover{
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+    box-shadow: 6px 6px 20px 0px rgba(255,255,255,0.75);
+    background-color: rgb(216, 216, 217);
+    transition: 300ms;
+}
+
+/* Aqui empieza el codigo de recuperarPassErr */
+
+#boxEmailErr{
+    grid-column: 3/7;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    margin-top: 10%;
+    border: 1px solid gray;
+    border-radius: 1%;
+    background-color: #f8f7f4;
+    -webkit-box-shadow: 9px 9px 16px 3px #ded9d9;
+    -moz-box-shadow: 9px 9px 16px 3px #ded9d9;
+    box-shadow: 9px 9px 16px 3px #ded9d9;
+}
+
+#tituloEmailErr{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 25px;
+}
+
+#imgEmailPassErr{
+    width: 20%;
+    margin: auto;
+}
+
+#formEmailErr{
+    margin-top: 2%;
+    display: grid;
+    grid-auto-rows: auto;
+}
+
+#inputEmailErr{
+    padding: 1%;
+    grid-row: 1;
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 2%;
+}
+
+
+#botonEnviarEmailErr{
+    grid-row: 3;
+    background-color: transparent;
+    border-radius: 2%;
+    border: 1px solid #b2b8ad;
+    display: inline-block;
+    cursor: pointer;
+    color: black;
+    text-decoration:none;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 3%;
+    padding: 1%;
+}
+
+#botonEnviarEmailErr:hover{
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+    box-shadow: 6px 6px 20px 0px rgba(255,255,255,0.75);
+    background-color: rgb(216, 216, 217);
+    transition: 300ms;
+}

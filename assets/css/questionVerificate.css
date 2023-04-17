@@ -1,0 +1,66 @@
+#boxQuestionVerificate{
+    grid-column: 3/7;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    margin-top: 10%;
+    border: 1px solid gray;
+    border-radius: 1%;
+    background-color: #f8f7f4;
+    -webkit-box-shadow: 9px 9px 16px 3px #ded9d9;
+    -moz-box-shadow: 9px 9px 16px 3px #ded9d9;
+    box-shadow: 9px 9px 16px 3px #ded9d9;
+}
+
+#tituloQuestionVerificate{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 25px;
+}
+
+#imgQuestionVerificate{
+    width: 20%;
+    margin: auto;
+}
+
+#formQuestionVerificate{
+    margin-top: 2%;
+    display: grid;
+}
+
+#boxQuestion1{
+    grid-row: 1;
+}
+
+#inputAnswer1{
+    padding: 1%;
+    width: 50%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#boxQuestion2{
+    grid-row: 2;
+}
+
+#inputAnswer2{
+    padding: 1%;
+    width: 50%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#botonOlvidar{
+    grid-row: 3;
+    background-color: transparent;
+    border-radius: 2%;
+    border: 1px solid #b2b8ad;
+    display: inline-block;
+    cursor: pointer;
+    color: black;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 3%;
+    padding: 1%;
+}
+

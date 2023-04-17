@@ -1,0 +1,17 @@
+<%- include('./partials/head.ejs') %> 
+<body>
+    <div id="contMain">
+        <div id="boxEmailErr">
+            <h1 id="tituloEmailErr">Recuperar contraseña</h1>
+            <img src="/img/key_pass.png" id="imgEmailPassErr">
+            <form action="/emailQuestion" method="post" id="formEmailErr">
+                <input type="email" placeholder="Introduce tu email" name="email" id="inputEmailErr" required>
+                <div id="errBox">
+                    El email que introduciste no se encuentra en nuestra base de datos
+                </div>
+                <button type="submit" id="botonEnviarEmailErr">Siguiente</button>
+            </form>
+        </div>
+    </div>
+</body>
+<%- include('./partials/footer.ejs') %>

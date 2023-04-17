@@ -1,0 +1,22 @@
+<%- include('./partials/head.ejs') %> 
+<body>
+    <div id="contMain">
+        <div id="boxOlvidar">
+            <h1 id="tituloOlvidar">Recuperar contraseña por Email</h1>
+            <img src="/img/key_pass.png" id="imgOlvidarPass">
+            <form action="/email" method="post" id="formOlvidar">
+                <input type="email" placeholder="Introduce tu email" name="email" id="inputOlvidar" required>
+                <button type="submit" id="botonOlvidar">Siguiente</button>
+            </form>
+        </div>
+    </div>
+    <!-- <a href="#" id="recuperarPass">Olvide my pass</a>
+    <script>
+        document.querySelector("#recuperarPass").addEventListener("click", (params) => {
+            $.post("/email", "cranelbell70@gmail.com", (resjquery) => {
+            console.log(resjquery);
+        })
+        })
+    </script> -->
+</body>
+<%- include('./partials/footer.ejs') %>

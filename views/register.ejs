@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeria</title>
+    <link rel="stylesheet" href="/css/register.css">
+    <script src="/js/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+    <h2>Registrarse</h2>
+
+    <div id="space">
+        <!-- TITULO -->
+        <div class="title">
+            <h3>Datos personales</h3>
+        </div>
+        <!-- SEGUNDO TITULO -->
+        <div class="title2">
+            <h3>Datos de recuperación</h3>
+        </div>
+        <!-- FORMULARIO DE REGISTRO -->
+        <form action="" name="formulario" method="post" id="form">
+            <label for="">Nombre</label>
+            <input type="text" pattern="^[A-Z][a-z]+([ ][A-Z][a-z]+)?$" title="El nombre debe iniciar con mayúsculas (si tienes dos, ambos deben iniciar en mayúscula)" name="name" id="name" placeholder="Ejemp: José Arturo" required>
+            <!-- <p>Campo vacío</p> -->
+            <label for="">Primer apellido</label>
+            <input required type="text" pattern="^[A-Z][a-z]+([- ][A-Z][a-z]+)*$" title="El apellido debe iniciar con mayúscula si tu nombre es compuesto, las primeras letras son con mayúsculas" name="lastname1" id="lastname1" placeholder="Ejemp: Rodríguez" >
+            <label for="">Segundo apellido</label>
+            <input required type="text" pattern="^[A-Z][a-z]+([- ][A-Z][a-z]+)*$" title="El apellido debe iniciar con mayúscula si tu nombre es compuesto, las primeras letras son con mayúsculas" name="lastname2" id="lastname2" placeholder="Ejemp: De La Cruz" >
+            <label for="">Email</label>
+            <input required type="email" pattern="^[\w.%+-]+@([\w-]+\.)+[\w]{2,}$" name="email" id="email" placeholder="Ejemp: ejemplo@gmail.com" >
+            <label for="">Teléfono</label>
+            <input  required type="number" min="0" name="number" pattern="^\+?\d{1,3}[\s-]?\(?\d{1,}\)?[\s-]?\d{1,}[\s-]?\d{1,}[\s-]?\d{1,}[\s-]?\d{1,}$" id="number" placeholder="Ejemp: 464037159">
+            <label for="">Contraseña</label>
+            <input  required type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[a-zA-Z\d\W]{8,}$" title="La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un caracer especial" name="password" id="password" >
+            <label for="">Confirmar tu contraseña</label>
+            <input  required type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[a-zA-Z\d\W]{8,}$" title="La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un caracer especial" id="password2" >
+        </form>
+        
+        <div class="questions">
+            <!-- PRIMER PREGUNTA -->
+            <label for="" class="Q1" >Primer pregunta</label>
+            <select name="question1" form="form" class="question1" required >
+                <option></option>
+                <option value="¿Cual es el nombre de tu primer mascota?">¿Cual es el nombre de tu primer mascota?</option>
+                <option value="¿En que ciudad nacieron tus padres?">¿En que ciudad nacieron tus padres?</option>
+                <option value="¿Cómo se llama tu merjor amigo?">¿Cómo se llama tu merjor amigo?</option>
+            </select>
+            <input required type="text" name="answer1" pattern="^[A-Z][a-zA-Z]*\s?[a-zA-Z]*$" title="Tu respuesta debe iniciar en mayúscula" class="reply1" form="form" placeholder="Primer respuesta" >
+            <!-- SEGUNDA PREGUNTA -->
+            <label for="" class="Q2">Segunda pregunta</label>
+            <select name="question2" form="form" class="question2" required>
+                <option></option>
+                <option form="form" value="¿Cual es tu color favorito?">¿Cual es tu color favorito?</option>
+                <option form="form" value="¿Cuando es tu cumpleaños?">¿Cuando es tu cumpleaños?</option>
+                <option form="form" value="¿Cual es tu comida preferida?">¿Cual es tu comida preferida?</option>
+            </select>
+            <input required type="text" name="answer2" pattern="^[A-Z][a-zA-Z]*\s?[a-zA-Z]*$" title="Tu respuesta debe iniciar en mayúscula" class="reply2" form="form" placeholder="Segunda respuesta" >
+            <button form="form" type="submit" onclick="validar()" class="register">REGISTRARSE</button>
+
+        </div>
+    </div>
+
+
+</body>
+<script src="/js/register.js"></script> 
+</html>

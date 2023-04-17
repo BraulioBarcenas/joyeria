@@ -1,0 +1,125 @@
+*{
+    background-color: #f8f7f4;
+}
+
+h2{
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: hsla(0, 0%, 0%, 0.200) solid 1px;
+    padding-bottom: 2%; 
+}
+
+#space{
+    display: grid;
+    grid-template-columns: calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8);
+}
+
+.title{
+    display: grid;
+    grid-column: 2/5;
+    border-bottom: hsla(0, 0%, 0%, 0.200) solid 1px;
+    margin-bottom: 4%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-right: 10%;
+}
+
+form{
+    display: grid;
+    grid-column: 2/5;
+}
+
+input{
+    margin-bottom: 3%;
+    height: 70%;
+    width: 90%;
+    border: black solid 1px ;
+}
+
+label{
+    margin-bottom: 1%;
+}
+
+.title2{
+    display: grid;
+    grid-column: 5/8;
+    border-bottom: hsla(0, 0%, 0%, 0.200) solid 1px;
+    margin-bottom: 4%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 10%;
+}
+
+.questions{
+    display: grid;
+    grid-template-rows: calc(100%/15) calc(100%/15) calc(100%/15) calc(100%/15) calc(100%/15) calc(100%/15) calc(100%/15) calc(100%/15) calc(100%/15) calc(100%/15) calc(100%/15) calc(100%/15) calc(100%/15) calc(100%/15) calc(100%/15);
+    grid-column: 5/8;
+    margin-left: 10%;
+}
+
+.question1{
+    width: 100%;
+    padding: 1%;
+}
+
+.reply1{
+    margin-top: 3%;
+    height: 70%;
+    width: 98%;
+    border: black solid 1px ;
+    padding: 1%;
+}
+
+.Q2{
+    grid-row: 5/6;
+}
+
+.question2{
+    grid-row: 6/7;
+}
+
+.reply2{
+    grid-row: 7/8;
+    margin-top: 3%;
+    height: 70%;
+    width: 98%;
+    border: black solid 1px ;
+    padding: 1%;
+}
+
+.register{
+    padding: 1%;
+    grid-row: 9/10;
+    margin-top: 2%;
+    height: 100%;
+    background-color: rgb(46, 46, 46);
+    color: white;
+    border: black solid 1px;
+}
+
+.register:hover{
+    transition: all 0.5s;
+    background-color: azure;
+    color: black;
+}
+
+.notification1{
+    font-weight: 900;
+    color: red;
+    grid-row: 15/16;
+    width: 91%;
+    padding: 1%;
+    border-radius: 3px;
+}
+
+.notification2{
+    font-weight: 900;
+    color: red;
+    grid-row: 16/17;
+    width: 91%;
+    padding: 1%;
+    border-radius: 3px;
+}
+
+span{
+    color: rgba(255, 0, 0, 0.76);
+}
+

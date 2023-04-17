@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeria</title>
+    <link rel="stylesheet" href="/css/errorEmail.css">
+</head>
+<body>
+
+    <div class="error">
+        <div class="image">
+            <img src="/img/error-alt-regular-24.png" alt="ERROR">
+        </div>
+        <div class="text">
+            <p>El correo no existe</p>
+            <p>Redirigiendo...</p>
+        </div>
+    </div>
+    
+    <script>
+        setTimeout(() => {location.replace(location.origin+'/login')},2000);
+    </script>
+</body>
+</html>

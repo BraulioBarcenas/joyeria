@@ -1,0 +1,123 @@
+#boxOlvidar{
+    grid-column: 3/7;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    margin-top: 10%;
+    border: 1px solid gray;
+    border-radius: 1%;
+    background-color: #f8f7f4;
+    -webkit-box-shadow: 9px 9px 16px 3px #ded9d9;
+    -moz-box-shadow: 9px 9px 16px 3px #ded9d9;
+    box-shadow: 9px 9px 16px 3px #ded9d9;
+}
+
+#tituloOlvidar{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 25px;
+}
+
+#imgOlvidarPass{
+    width: 20%;
+    margin: auto;
+}
+
+#formOlvidar{
+    margin-top: 2%;
+    display: grid;
+}
+
+#inputOlvidar{
+    padding: 1%;
+    grid-row: 1;
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 2%;
+}
+
+#botonOlvidar{
+    grid-row: 2;
+    background-color: transparent;
+    border-radius: 2%;
+    border: 1px solid #b2b8ad;
+    display: inline-block;
+    cursor: pointer;
+    color: black;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 3%;
+    padding: 1%;
+}
+
+#botonOlvidar:hover{
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+    box-shadow: 6px 6px 20px 0px rgba(255,255,255,0.75);
+    background-color: rgb(216, 216, 217);
+    transition: 300ms;
+}
+
+#botonReenviar{
+    background-color: transparent;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    color: blue;
+    text-decoration-line: underline; 
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 3%;
+    padding: 1%;
+}
+
+#botonReenviar:hover{
+    color: rgb(136, 19, 19);
+    transition: 300ms;
+}
+
+/* Aqui empieza el css de "cambiar PASS" */
+
+#inputCambiar{
+    padding: 1%;
+    grid-row: 1;
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 2%;
+}
+
+#inputCambiar2{
+    padding: 1%;
+    grid-row: 2;
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 3%;
+}
+
+
+#botonRecuperar{
+    grid-row: 3;
+    background-color: transparent;
+    border-radius: 2%;
+    border: 1px solid #b2b8ad;
+    display: inline-block;
+    cursor: pointer;
+    color: black;
+    text-decoration:none;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 3%;
+    padding: 1%;
+}
+
+#botonRecuperar:hover{
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+    box-shadow: 6px 6px 20px 0px rgba(255,255,255,0.75);
+    background-color: rgb(216, 216, 217);
+    transition: 300ms;
+}
+

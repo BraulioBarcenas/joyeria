@@ -1,0 +1,26 @@
+<%- include('./partials/head.ejs') %> 
+<body>
+    <div id="contMain">
+        <div id="boxQuestionVerificate">
+            <h1 id="tituloQuestionVerificate">Responde a tu pregunta secreta</h1>
+            <img src="/img/key_pass.png" id="imgQuestionVerificate">
+            <form action="/questionVerificateMethod" method="post" id="formQuestionVerificate">
+                <div id="boxQuestion1">
+                    <p><span><%= Q1 %></span></p>
+                    <input type="text" placeholder="Escribe tu respuesta" name="answer1" id="inputAnswer1" required pattern="^[A-Z][a-zA-Z]*\s?[a-zA-Z]*$" title="Tu respuesta debe iniciar en mayúscula">
+                </div>
+
+                <div id="boxQuestion2">
+                    <p><span><%= Q2 %></span></p>
+                    <input type="text" placeholder="Escribe tu respuesta" name="answer2" id="inputAnswer2" required pattern="^[A-Z][a-zA-Z]*\s?[a-zA-Z]*$" title="Tu respuesta debe iniciar en mayúscula">
+                </div>
+                <div id="boxQuestionErr">
+                    La(s) respuesta(s) son incorrectas
+                </div>
+                
+                <button type="submit" id="botonOlvidar">Siguiente</button>
+            </form>
+        </div>
+    </div>
+</body>
+<%- include('./partials/footer.ejs') %>

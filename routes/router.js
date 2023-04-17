@@ -28,6 +28,36 @@ router.post('/deleteProducto',controller.deleteProducto);
 router.post('/editProducto',controller.editProducto);
 router.post('/editProductoApply',upload.single('img'),controller.editProductoApply);
 
+const sesiones = require('../controller/sesiones.js')
+
+router.get('/',sesiones.main);
+router.get('/registro',sesiones.registro);
+router.get('/buscador',sesiones.buscador);
+router.get('/carrusel',sesiones.carrusel);
+router.get('/recuperarPass', sesiones.recuperarPass);
+// router.get('/codigoVerificate', sesiones.codigoVerificate);
+// router.get('/cambiarPass', sesiones.cambiarPass);
+router.get('/recuperarPassQuestion', sesiones.recuperarPassQuestion);
+router.get('/questionVerificate', sesiones.questionVerificate);
+
+router.post('/email', sesiones.email);
+router.post('/verificate', sesiones.verificate);
+router.post('/cambiarPassMethod', sesiones.cambiarPassMethod);
+router.post('/reenviarCodigo', sesiones.reenviarCodigo)
+router.post('/emailQuestion', sesiones.emailQuestion);
+router.post('/questionVerificateMethod', sesiones.questionVerificateMethod);
+
+const login = require('../controller/login.js');
+
+// router.get('/', login.main);
+router.get('/login', login.login);
+router.get('/login/register', login.register);
+router.get('/logout',login.logout);
+router.get('/opcionesRecPass', login.opcionesRecPass);
+
+router.post('/login', login.auth);
+router.post('/login/register', login.registerPost);
+
 router.get('*', function(req, res){
     res.status(404).redirect('/error');
 });

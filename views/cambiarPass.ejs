@@ -1,0 +1,36 @@
+<%- include('./partials/head.ejs') %> 
+<body>
+    <div id="contMain">
+        <div id="boxOlvidar">
+            <h1 id="tituloOlvidar">Cambiar contraseña</h1>
+            <img src="/img/key_pass.png" id="imgOlvidarPass">
+            <form action="/cambiarPassMethod" method="post" id="formOlvidar">
+                <input type="password" placeholder="Introduce tu contraseña" name="pass1" id="inputCambiar" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[a-zA-Z\d\W]{8,}$" title="La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un caracer especial">
+                <input type="password" placeholder="Confirma tu contraseña" name="pass2" id="inputCambiar2" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[a-zA-Z\d\W]{8,}$" title="La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un caracer especial">
+                <div id="message"></div>
+                <button type="submit" name="enviarPass" id="botonRecuperar">Aceptar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $('#inputCambiar, #inputCambiar2').on('keyup', function(){
+            if($('#inputCambiar').val() == $('#inputCambiar2').val()){
+                $('#message').html('').css('color', 'green');
+                $('#botonRecuperar').prop('disabled', false);
+                $('#botonRecuperar').css('background-image', 'lienar-gradient(-180deg, #898181, #528652)');
+                $('#botonRecuperar').css('display', 'block');
+                $('#message').css('display', 'none');
+            }
+            else{
+                $('#message').html('Las contraseñas no coinciden').css('color', 'red');
+                $('#botonRecuperar').css('background-image', 'lienar-gradient(-180deg, #898181, #484444)');
+                $('#botonRecuperar').prop('disabled', true);
+                $('#botonRecuperar').css('display', 'none');
+                $('#message').css('display', 'block');
+
+            }
+        })
+    </script>
+</body>
+<%- include('./partials/footer.ejs') %>

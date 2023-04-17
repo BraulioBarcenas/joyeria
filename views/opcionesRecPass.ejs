@@ -1,0 +1,15 @@
+<%- include('./partials/head.ejs') %> 
+<body>
+    <div id="contMain">
+        <div id="boxOpcionesPass">
+            <h1 id="tituloOpcionesPass">¿Cómo te gustaría recuperar tu contraseña?</h1>
+            <form action="/recuperarPass" method="get">
+                <button type="submit" id="botonOpcionPass1"><p><img src="/img/btnEmail.png" class="imgOpcionesRecPass"></p>Recibir un código por correo</button>
+            </form>
+            <form action="/recuperarPassQuestion" method="get">
+                <button type="submit" id="botonOpcionPass2"><p><img src="/img/btnSecret.png" class="imgOpcionesRecPass"></p>Mediante una pregunta secreta</button>
+            </form>    
+        </div>  
+    </div>
+</body>
+<%- include('./partials/footer.ejs') %>

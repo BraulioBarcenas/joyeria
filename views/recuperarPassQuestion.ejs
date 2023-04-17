@@ -1,0 +1,14 @@
+<%- include('./partials/head.ejs') %> 
+<body>
+    <div id="contMain">
+        <div id="boxOlvidar">
+            <h1 id="tituloOlvidar">Recuperar contraseña por preguntas secretas</h1>
+            <img src="/img/key_pass.png" id="imgOlvidarPass">
+            <form action="/emailQuestion" method="post" id="formOlvidar">
+                <input type="email" placeholder="Introduce tu email" name="email" id="inputOlvidar" required>
+                <button type="submit" id="botonOlvidar">Siguiente</button>
+            </form>
+        </div>
+    </div>
+</body>
+<%- include('./partials/footer.ejs') %>

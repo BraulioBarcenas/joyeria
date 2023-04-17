@@ -55,7 +55,12 @@ controller.error = (req, res) => {
 
 
 controller.cobro = (req,res) => {
-    res.render('cobro');
+    if (req.session.loggedin == true) {
+        res.redirect('/login');
+    }else{
+        // res.render('registroProducto');
+        res.render('cobro');
+    }
 }
 
 controller.registro = (req,res) => {
