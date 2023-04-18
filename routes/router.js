@@ -19,6 +19,8 @@ router.get('/productos/:tipo',controller.renderProductos);
 router.get('/error',controller.error);
 router.get('/viewProducto/:id',controller.viewProducto);
 router.post('/buy',controller.comprar);
+router.post('/carrito',controller.carrito);
+router.post('/comprarCliente',controller.comprarCliente);
 
 // Exclusivas de empleados
 router.get('/cobro',controller.isEmpleado,controller.cobro);

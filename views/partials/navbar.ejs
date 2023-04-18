@@ -7,22 +7,27 @@
         <a class="navOpt" href="/productos/relojes">Relojes</a>
     </div>
     <div id="navLoginDiv">
-        <a class="navOpt" id="carrito" href="#">
+        <form id="carritoForm" action="/carrito" method="post">
+            <input type="text" id="carritoInput" name="carrito" hidden>
+        </form>
+        <a class="navOpt" id="carrito" href="#" onclick="document.querySelector('#carritoForm').submit()">
             <img src="/img/cart.png" alt="Carrito">
             <span id="carritoCount"></span>
         </a>
         <% if (logged == true) { %>
             <a href="/logout" class="navOpt">Cerrar Sesión</a>
         <% } else {%>
-            <a class="navOpt" id="registro" href="/login">Registro</a>
-            <a class="navOpt" id="login" href="/login/register">Login</a>
+            <a class="navOpt" id="registro" href="/login/register">Registro</a>
+            <a class="navOpt" id="login" href="/login">Login</a>
         <% } %>
     </div>
     <script>
         const countCarrito = document.querySelector('#carritoCount');
+        const carritoInput = document.querySelector('#carritoInput');
         const updateCarritoCount = () => {
             let carrito = JSON.parse(sessionStorage.getItem('carrito'));
             countCarrito.innerText = carrito.length;
+            carritoInput.value = sessionStorage.getItem('carrito');
         }
         window.addEventListener('load',(e) => {
             try {

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/carrito.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/tarjetas.css">
+    <link rel="stylesheet" href="/css/recuperarPass.css">
+    <link rel="stylesheet" href="/css/renderErr.css">
+    <link rel="stylesheet" href="/css/opcionesRecPass.css">
+    <link rel="stylesheet" href="/css/questionVerificate.css">
+    <script src="/js/underscore-umd-min.js"></script>
+    <script src="/js/jquery-3.6.3.min.js"></script>
+    <title>Joyeria</title>    
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %> 
+    <div class="space">
+
+        <div class="tittle">
+            <p>Carrito de compras</p>
+        </div>
+
+        <div class="seguir">
+            <button onclick="location.replace(location.origin+'/productos')">Seguir comprando</button>
+        </div>
+
+        <div class="vaciar">
+            <button class="btnvaciar" onclick="deleteCarrito(this)">Vaciar carrito de compras</button>
+        </div>
+      
+        <% if (carrito[0].cantidad != undefined) { %>
+            <div class="comprar">
+                <button class="btnvaciar" onclick="comprarCliente()">Realizar compra</button>
+            </div>
+        <% } %>
+
+        <% if (logged == false) { %>
+            <h3 style="text-align: center; grid-row: 5; grid-column: 1/4; margin-bottom: 1%;">Necesitas iniciar sesion para comprar</h3>
+        <% } %>
+
+        <div class="table">
+            <table class="tabla">
+                <tbody>
+                    <% if (carrito[0].cantidad == undefined) { %>
+                        <h3 style="text-align: center; grid-column: 1/4;">No hay productos en tu carrito</h3>
+                    <% } else {%>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Subtotal</th>
+                            <th>Eliminar</th>
+                        </tr>
+                        <% for( let i = 0; i <carrito.length; i++ ) { %>
+                            <tr>
+                                <td hidden><input type="text" id="idProducto" value="<%=carrito[i].idProducto%>"></td>
+                                <td><img class='imagenReloj' src='/img/<%=carrito[i].nombreImg%>' alt=''></td>
+                                <td><%=carrito[i].precio%></td>
+                                <td><%=carrito[i].cantidad%></td>
+                                <td class="subtotalPreIva"><%=carrito[i].cantidad * carrito[i].precio%></td>
+                                <td><a href='#' onclick="deleteProdCarrito(this)"><img class='trash' src='/img/trash-regular-24.png' alt=''></a></td>
+                            </tr>
+                        <% } %>
+                    <% } %>
+                </tbody>
+            </table>
+            <table class="total">
+                <tr>
+                    <td class="pago">Subtotal: </td>
+                    <td class="pago" id="subtotal">$0</td>
+                </tr>
+                <tr>
+                    <td class="pago">Envío:</td>
+                    <td class="pago">$200</td>
+                </tr>
+                <tr>
+                    <td class="pago">Total (INC. IVA):</td>
+                    <td class="pago" id="total">$0</td>
+                </tr>
+            </table>
+        </div>
+    </div> 
+    <script>
+        const subtotal = document.querySelector('#subtotal');
+        const total = document.querySelector('#total');
+        const subtotalPreIva = document.querySelectorAll('.subtotalPreIva');
+
+        let suma = 0;
+        for (const producto of subtotalPreIva) {
+            suma += (producto.innerText)*1;
+        }
+        subtotal.innerText = "$"+suma;
+        total.innerText = "$"+((suma*0.16)+suma);
+
+        const deleteProdCarrito = (element) => {
+            const idProducto = element.parentElement.parentElement.querySelector('#idProducto').value;
+            const carrito = JSON.parse(sessionStorage.getItem("carrito"))
+            const newCarrito = _.reject(carrito, function(producto) {
+              return producto.id == idProducto;
+            });
+            sessionStorage.removeItem('carrito');
+            sessionStorage.setItem('carrito',JSON.stringify(newCarrito));
+            updateCarritoCount();
+            document.querySelector('#carritoForm').submit();
+        }
+
+        const deleteCarrito = (element) => {
+            sessionStorage.removeItem('carrito');
+            document.querySelector('#carritoInput').value = "";
+            document.querySelector('#carritoForm').submit();
+        }
+
+        const comprarCliente = async () => {
+            const carrito = JSON.parse(sessionStorage.getItem("carrito"));
+            try {
+                for (const producto of carrito) {
+                    await $.post('/comprarCliente',producto);
+                    sessionStorage.clear();
+                    alert('Venta existosa');
+                    location.replace(location.origin+'/');
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -163,6 +163,42 @@ controller.viewProducto = (req, res) => {
     })
 }
 
+controller.carrito = (req,res) => {
+    const carrito = JSON.parse(req.body.carrito || `[{"vacio":true}]`);
+    const carritoDetails = [];
+    req.getConnection(async (err,conn) => {
+        const awaitConn = mysqlAwait.createConnection(conn.config);
+        for (const producto of carrito) {
+            const productoDetails = (await awaitConn.awaitQuery('SELECT * FROM productos WHERE idProducto=?',[producto.id]))[0];
+            carritoDetails.push({...productoDetails,cantidad: producto.cantidad});
+        }
+        if (req.session.loggedin == true) {
+            res.render('carrito',{
+                carrito: carritoDetails,
+                logged: true
+            })
+        }else{
+            res.render('carrito',{
+                carrito: carritoDetails,
+                logged: false
+            })
+        }
+    })
+}
+
+controller.comprarCliente = (req,res) => {
+    req.getConnection(async (err,conn) => {
+        const idProducto = req.body.id;
+        const cantidad = req.body.cantidad;
+        const awaitConn = mysqlAwait.createConnection(conn.config);
+        let stock = (await awaitConn.awaitQuery('SELECT stock FROM productos WHERE idProducto=?',[idProducto]))[0].stock;
+        const resta = (stock)*1-(cantidad)*1;
+        conn.query("UPDATE productos SET stock=? WHERE idProducto=?",[resta,idProducto], (err, result) => {
+            res.send(true);
+        })
+    })
+}
+
 controller.comprar = (req,res) => {
     req.getConnection(async (err,conn) => {
         const producto = req.body;

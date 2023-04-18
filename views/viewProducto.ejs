@@ -34,7 +34,7 @@
             </div>
             <div class="btn-box">
                 <button class="carrito-btn" onclick="addCarrito()">Agregar al carrito</button>
-                <button class="comprar-btn">Compra ahora</button>
+                <button class="comprar-btn" onclick="comprarAhora()">Compra ahora</button>
             </div>
         </div>
 
@@ -64,9 +64,11 @@
             } catch (error) {
                 alert('Ocurrio un error al agregar producto al carrito');
             }
-            
+        }
 
-            
+        const comprarAhora = () => {
+            addCarrito();
+            document.querySelector('#carritoForm').submit();
         }
     </script>
 </body>
