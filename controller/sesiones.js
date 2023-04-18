@@ -43,7 +43,7 @@ controller.recuperarPass = (req,res) => {
     if (req.session.loggedin == true) {
         res.redirect('/');
     }else{
-        res.redirect('/opcionesRecPass');
+        res.render('recuperarPass');
     }
 
 }

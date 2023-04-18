@@ -28,10 +28,10 @@
         </div>
 
         <div class="vaciar">
-            <button class="btnvaciar" onclick="deleteCarrito(this)">Vaciar carrito de compras</button>
+            <button class="btnvaciar" onclick="deleteCarrito()">Vaciar carrito de compras</button>
         </div>
       
-        <% if (carrito[0].cantidad != undefined) { %>
+        <% if (carrito[0].cantidad != undefined && logged == true) { %>
             <div class="comprar">
                 <button class="btnvaciar" onclick="comprarCliente()">Realizar compra</button>
             </div>
@@ -96,8 +96,12 @@
         total.innerText = "$"+((suma*0.16)+suma);
 
         const deleteProdCarrito = (element) => {
-            const idProducto = element.parentElement.parentElement.querySelector('#idProducto').value;
             const carrito = JSON.parse(sessionStorage.getItem("carrito"))
+            if (carrito.length == 1) {
+                deleteCarrito();
+                return;
+            }
+            const idProducto = element.parentElement.parentElement.querySelector('#idProducto').value;
             const newCarrito = _.reject(carrito, function(producto) {
               return producto.id == idProducto;
             });
@@ -107,7 +111,7 @@
             document.querySelector('#carritoForm').submit();
         }
 
-        const deleteCarrito = (element) => {
+        const deleteCarrito = () => {
             sessionStorage.removeItem('carrito');
             document.querySelector('#carritoInput').value = "";
             document.querySelector('#carritoForm').submit();
