@@ -61,6 +61,9 @@ router.get('/opcionesRecPass', login.opcionesRecPass);
 
 router.post('/login', login.auth);
 router.post('/login/register', login.registerPost);
+router.get('/registerEmpleado', login.registerEmpleado);
+router.post('/registerEmpleadoPost',login.registerEmpleadoPost);
+router.post('/authEmpleado', login.authEmpleado)
 
 router.get('*', function(req, res){
     res.status(404).redirect('/error');

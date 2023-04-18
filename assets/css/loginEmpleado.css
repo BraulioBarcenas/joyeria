@@ -1,0 +1,40 @@
+*{
+    background-color: #f8f7f4;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#space{
+    display: grid;
+    grid-template-columns: calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8);
+}
+
+.formulario{
+    display: grid;
+    grid-column: 3/7;
+    height: 100%;
+    text-align: center;
+    margin-top: 5%;
+    border: black solid 1px;
+    padding-top: 1%;
+    padding-bottom: 4%;
+    border-radius: 1px;
+    -webkit-box-shadow: 9px 9px 16px 3px #ded9d9;
+    -moz-box-shadow: 9px 9px 16px 3px #ded9d9;
+    box-shadow: 9px 9px 16px 3px #ded9d9;
+}
+
+input, select{
+    height: 4%;
+    width: 60%;
+    margin-bottom: 2%;
+    
+}
+
+button{
+    width: 60%;
+}
+
+h3{
+    margin-top: 0%;
+    margin-bottom: 0%;
+}

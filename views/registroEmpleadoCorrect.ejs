@@ -1,0 +1,14 @@
+<%- include('./partials/head.ejs') %>
+<body>
+    <script src="/js/insertErrorCss.js"></script>
+    <div id="contMain">
+        <h1 id="errorTitle">Proceso completado</h1>
+        <h3 id="errorSubtitle">Redirigiendo....</h3>
+        <br>
+        <img src="/img/accept.png" id="errorLogo">
+    </div>
+    <script>
+        setTimeout(() => {location.replace(location.origin+'/registerEmpleado')},2000)
+    </script>
+</body>
+<%- include('./partials/footer.ejs') %>

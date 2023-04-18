@@ -41,11 +41,11 @@
         </div>
         <!-- LEYENDA INPUT -->
         <div class="ventaInput">
-            <input type="checkbox" id="check" onchange="mostrar()">
+            <input type="checkbox" id="check"  onchange="mostrar()">
         </div>
 
-        <form action="" id="token" style="display: none;">
-            <input id="tokenLabel" type="text" placeholder="Ingresa el token punto de venta"><br>
+        <form action="/authEmpleado" method="post" id="token" style="display: none;">
+            <input id="tokenLabel" type="text" name="token" placeholder="Ingresa el token punto de venta"><br>
             <input id="tokenInput" type="submit">
         </form>
         

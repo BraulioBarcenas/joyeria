@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/loginEmpleado.css">
+</head>
+<body>
+
+    <div id="space">
+        
+        <div class="formulario">
+            <h3>REGISTRO DE EMPLEADOS</h3>
+            <form action="/registerEmpleadoPost" method="post" id="form">
+                <label for="">NOMBRE</label><br>
+                <input type="text" name="name" placeholder="Nombre"><br>
+                <label for="">PRIMER APELLIDO</label><br>
+                <input type="text" name="apPat" placeholder=""><br>
+                <label for="">SEGUNDO APELLIDO</label><br>
+                <input type="text" name="apMat" placeholder=""><br>
+                <label for="">EMAIL</label><br>
+                <input type="email" name="email" placeholder=""><br>
+                <label for="">CONTRASEÑA</label><br>
+                <input type="password" name="pass1" placeholder=""><br>
+                <label for="">CONFRIMAR CONTRASEÑA</label><br>
+                <input type="password" name="pass2" placeholder=""><br>
+                <label for="">TELÉFONO</label><br>
+                <input type="number" name="phone" placeholder=""><br>
+                <label for="">SUCURSAL</label><br>
+                <select name="sucursal" id=""><br>
+                    <option ></option>
+                    <option value="MEXICO">MEXICO</option>
+                    <option value="CAMPECHE">CAMPECHE</option>
+                    <option value="YUCATAN">YUCATAN</option>
+                    <option value="LEON">LEON</option>
+                    <option value="GUADALAJARA">GUADALAJARA</option>
+                </select><br>   
+                <button>REGISTRAR</button>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>
